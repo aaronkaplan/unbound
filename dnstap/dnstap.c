@@ -89,7 +89,7 @@ dt_send(const struct dt_env *env, void *buf, size_t len_buf)
 		return;
 	res = fstrm_io_submit(env->fio, env->fq, buf, len_buf,
 			      fstrm_free_wrapper, NULL);
-	if (res != FSTRM_RES_SUCCESS)
+	if (res != fstrm_res_success)
 		free(buf);
 }
 
